@@ -37,6 +37,8 @@ def create_app():
         os.makedirs('temp')
 
     db.init_app(app)
+
+    db.drop_all(app=app)
     db.create_all(app=app)
     return app
 
